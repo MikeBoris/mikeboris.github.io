@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Weather App</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Nixie+One|Raleway');
+
+html {
+  background-color: turquoise;
+}
+h1 {
+  font-family: 'Nixie One', cursive;
+  font-size: 40px;
+  text-align: center;
+}
+.desc, .icon_img, .temper, .winnie {
+  font-family: 'Raleway', sans-serif;
+  color: #505050;
+  font-size: 21px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+}
+.box {
+    width: 400px;
+    height: 200px;    
+    padding: 50px;
+    margin: 200px;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+}
+img {
+    float: right;
+}
+	</style>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+
+var lat, lon;
+
+$(document).ready(function() {
+if (navigator.geolocation) {navigator.geolocation.getCurrentPosition(function(position) {
+
+    	var lat = position.coords.latitude;
+    	var lon = position.coords.longitude;
+
+
+		var weatherAPI = "http://api.openweathermap.org/data/2.5/weather?";
+		var location = "lat=" + lat + "&lon=" + lon;
+		var id = "&units=imperial&appid=6e236304b03456fd46d29fa7688aacc2";
+
+		var getWeather = weatherAPI + location + id;
+  
+		$.getJSON(getWeather).done(function( data ) {
+    		var description = data.weather[0].main; // eg "clear sky"
+    		var temp = data.main.temp; // eg 285.514
+    		var wind = data.wind.speed; // eg 5.52
+    		var icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+
+        	$(".desc").html(description);
+        	$(".temper").html(temp + " degrees Fahrenheit");
+        	$(".winnie").html(wind + " knots");
+        	$(".icon_img").html("<img src='" + icon + "'>");
+
+
+    		});
+		});
+	};
+}); 
+
+
+
+</script>
+
+
+</script>
+<div class="box">
+<h1>The weather is...</h1>
+<div class = "desc"></div>
+<div class = "icon_img"></div>
+<div class = "temper"></div>
+<div class = "winnie"></div>
+
+</div>
+
+
+
+</body>
+</html>
