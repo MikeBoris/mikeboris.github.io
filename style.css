@@ -1,3 +1,5 @@
+/*
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css')
 @import url('http://www.w3schools.com/lib/w3.css');
 @import url('http://fonts.googleapis.com/css?family=Raleway');
@@ -6,3 +8,57 @@
 body,h1 {font-family: "Raleway", Arial, sans-serif}
 h1 {letter-spacing: 6px}
 .w3-row-padding img {margin-bottom: 12px}
+
+*/
+
+    @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata|Shrikhand');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    .bigdog {
+      font-size: 90px;
+      font-family: 'Fugaz One', cursive;
+    }
+    h1 {
+      font-size: 150px;
+      font-family: 'Shrikhand', cursive;
+      padding-top: 90px;
+      line-height: 0.8;
+    }
+    h2 {
+      font-size: 30px;
+      font-family: 'Inconsolata', monospace;
+      line-height: 0.8;
+      padding: 10px;
+    }
+    ul {
+      text-align: center;
+      list-style-type: circle;
+    }
+    li {
+
+      font-size: 20px;
+      font-family: 'Inconsolata', monospace;
+      line-height: 0.8;
+      padding: 5px;
+    }
+    .content {
+      text-align: center;
+    }
+    .icon {
+      font-size: 120px;
+    }
+    .ulList {
+        width:280px;
+        margin:0 auto;
+        text-align:left;
+        line-height: 0.8;
+    }
+    .spaceship {
+    	/*display: block;
+    	margin-left: auto;
+    	margin-right: auto;*/
+	    width: 40%;
+	    align: middle;
+	    hspace: 20
+    }
